@@ -4,8 +4,7 @@ Simple message broadcasting library (similar to NotificationCenter in spirit). I
 Tree bark won't bark. But `bark` will, and it will allow you to broadcast information across your app in a structured concurrent way.
 
 ## Why Bark
-With `bark`, you can register subscriptions that require a concurrency context, and be assured at the point of use that the subscription was
-run when the `await` to the associated post completes. 
+With `bark`, you can register subscriptions that require a concurrency context, and be assured at the point of use that the subscription was run when the `await` to the associated post completes. 
 
 This allows you to reason about the order in which tasks associated with subscriptions execute. Making it easier to write testable and understandable code.
 
@@ -20,7 +19,7 @@ Bark is available through the Swift Package Manager. To install it, simply add t
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/willowtreeapps/bark.git", from: "1.0.0")
+    .package(url: "https://github.com/willowtreeapps/bark.git", from: "1.0.1")
 ]
 ```
 
@@ -56,7 +55,7 @@ func testPostsOfASingleSubscription() async throws {
 Contributions are immensely appreciated. Feel free to submit pull requests or to create issues to discuss any potential bugs or improvements.
 
 ## Author
-Grove was created by @rafcabezas at [WillowTree, Inc](https://willowtreeapps.com).
+Bark was created by @rafcabezas at [WillowTree, Inc](https://willowtreeapps.com).
 
 ## License
-Grove is available under the [MIT license](https://opensource.org/licenses/MIT).
+Bark is available under the [MIT license](LICENSE).
