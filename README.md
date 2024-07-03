@@ -1,7 +1,7 @@
 # Bark
-Simple message broadcasting library (similar to NotificationCenter in spirit). It's designed to help you manage a group of dependencies in a container, and easily resolve them when needed, thus helping make your project more modular, testable, and maintainable.
+Simple, but powerful, message broadcasting library (similar to NotificationCenter in spirit).
 
-Tree bark won't bark. But `bark` will, and it will allow you to broadcast information across your app in a structured concurrent way.
+Tree bark won't bark. But `bark` will!, and it will help you broadcast information across your app in a structured concurrent way.
 
 ## Why Bark
 With `bark`, you can register subscriptions that require a concurrency context, and be assured at the point of use that the subscription was run when the `await` to the associated post completes. 
@@ -29,6 +29,11 @@ Bark allows for structured concurrent message broadcasting. Here's an example fr
 ### Registration
 
 ```swift
+// Bark instance: I recommend registering into dependency injection and resolving it where you need it.
+// Consider [Grove](https://github.com/willowtreeapps/grove) for this purpose!
+// You normally want a single instance of Bark for your app.
+let bark = Bark()
+
 func testPostsOfASingleSubscription() async throws {
     // Given
     let subscriptions = Bark.Store()
