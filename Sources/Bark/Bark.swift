@@ -11,8 +11,10 @@ public final class Bark: @unchecked Sendable {
 
     // MARK: - Types
 
+    /// The block that is invoked when a subscription receives a notification
     public typealias Block = (Any?) async -> Void
 
+    /// Notifications are identified by their name
     public struct Name: Hashable, Equatable {
         private let value: String
         public init(_ value: String) {
@@ -22,6 +24,8 @@ public final class Bark: @unchecked Sendable {
         public var description: String { value }
     }
 
+    /// Subscriptions are scoped to a store. Create a store in a place where the store's lifetime will match when the subscription needs to be handled.
+    /// For example, you can create one Store per view (Make sure to mark it as @State if using SwiftUI)
     public final class Store: @unchecked Sendable {
         struct Handler {
             let name: Name
@@ -56,6 +60,7 @@ public final class Bark: @unchecked Sendable {
 
     // MARK: - Properties
 
+    public static let shared = Bark()
     private let lock = NSLock()
     private struct StoreWrapper {
         weak var store: Store?
