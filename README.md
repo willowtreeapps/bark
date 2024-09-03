@@ -19,7 +19,7 @@ Bark is available through the Swift Package Manager. To install it, simply add t
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/willowtreeapps/bark.git", from: "1.0.1")
+    .package(url: "https://github.com/willowtreeapps/bark.git", from: "1.0.2")
 ]
 ```
 
@@ -29,9 +29,15 @@ Bark allows for structured concurrent message broadcasting. Here's an example fr
 ### Registration
 
 ```swift
-// Bark instance: I recommend registering into dependency injection and resolving it where you need it.
+// Bark instance: I recommend registering into dependency injection and resolving it 
+// where you need it.
 // Consider [Grove](https://github.com/willowtreeapps/grove) for this purpose!
-// You normally want a single instance of Bark for your app.
+//
+// You normally want a single instance of Bark for your app, but you can define 
+// different instances that deal with different parts of the app.
+// The instance is similar in purpose to NotificationCenter instance.
+// If not using dependency injection, you can use `Bark.shared`. This is equivalent
+// to NotificationCenter.default.
 let bark = Bark()
 
 func testPostsOfASingleSubscription() async throws {

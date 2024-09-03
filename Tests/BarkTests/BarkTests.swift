@@ -11,7 +11,7 @@ import XCTest
 
 final class BarkTests: XCTestCase {
     @MainActor
-    let bark = Bark()
+    let bark = Bark.shared
 
     @MainActor
     override func setUp() async throws {}
