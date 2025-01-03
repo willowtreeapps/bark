@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "Bark",
     platforms: [
-      .iOS(.v16),
-      .tvOS(.v16),
+      .iOS(.v15),
+      .tvOS(.v15),
       .watchOS(.v5),
       .visionOS(.v1),
     ],
